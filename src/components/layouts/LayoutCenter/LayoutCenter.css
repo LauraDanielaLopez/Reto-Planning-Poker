@@ -1,0 +1,9 @@
+@import url(../../Header/header.css);
+
+.centered__layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 140px);
+    overflow: hidden;
+}

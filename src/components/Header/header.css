@@ -1,0 +1,19 @@
+@import url(../../index.css);
+
+.HeaderCrearPartida {
+    width: 100%;
+    padding: 40px 80px;
+}
+  
+.HeaderCrearPartida__content {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 20px; 
+    align-items: center;
+}
+
+.HeaderCrearPartida__text{
+    font-size: 21px;
+    color: var(--blanco);
+    line-height: 21px;
+}

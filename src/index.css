@@ -1,0 +1,22 @@
+:root{
+    --backgroundFondo: radial-gradient(50% 50% at 50% 50%, #330072 0%, rgba(31, 13, 63, 0.9) 100%);
+    --blanco: rgb(255, 255, 255);
+    --font-size: 14px;
+    --MoradoClaro: #BB65FF;
+    --MoradoOscuro: #330072;
+    --border-radius: 50px;
+    --FondoDisabled: #9D9DA14D;
+    --letraDisabled: #9D9DA199;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--backgroundFondo);
+    background-repeat: no-repeat;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

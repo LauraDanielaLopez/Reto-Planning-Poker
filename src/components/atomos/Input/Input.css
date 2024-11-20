@@ -1,0 +1,18 @@
+.input {
+    padding: 10px;
+    font-size: var(--font-size);
+    background: transparent;
+    border: 1px solid var(--MoradoClaro);
+    border-radius: var(--border-radius);
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 24px;
+    opacity: 0px;
+    transition: box-shadow 0.3s ease-in-out
+}
+
+.input:focus {
+    box-shadow: 0 0 5px 0.3px #BB65FF;
+    outline: none;
+    color: var(--blanco);
+}

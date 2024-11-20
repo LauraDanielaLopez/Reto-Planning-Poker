@@ -1,0 +1,10 @@
+@import url(../../../index.css);
+
+.label {
+    font-size: 14px;
+    color: var(--blanco);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+    line-height: 19px;
+}

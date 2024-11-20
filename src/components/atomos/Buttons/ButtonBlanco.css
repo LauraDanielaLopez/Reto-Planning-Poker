@@ -1,0 +1,20 @@
+@import url(../../../index.css);
+
+.button {
+  padding: 16px 24px 16px 24px;
+  font-size: 1rem;
+  color: var(--MoradoOscuro);
+  background-color: var(--blanco);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background: var(--FondoDisabled);
+  color: var(--letraDisabled);
+}
+
