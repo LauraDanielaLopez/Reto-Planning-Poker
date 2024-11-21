@@ -32,9 +32,9 @@ const CrearPartida = () => {
       
       <LayoutCenter>
         <div className="formCrearPartida">
-          <Label text="Nombra la partida" />
-          <Input value={gameName} onChange={handleChange} name="partida" />
-          <ButtonBlanco text="Crear partida" onClick={handleSubmit} disabled={!isValid} />     
+          <Label text="Nombra la partida" id="partida"/>
+          <Input value={gameName} onChange={handleChange} name="partida" id="partida"/>
+          <ButtonBlanco text="Crear partida" type="submit" onClick={handleSubmit} disabled={!isValid} />     
         </div>
       </LayoutCenter>
     </div>

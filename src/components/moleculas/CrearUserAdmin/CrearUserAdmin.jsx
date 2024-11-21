@@ -41,8 +41,8 @@ const CrearUserAdmin = () => {
       <LayoutCenter>
         <section className="FormCrearAdmin">
           <form className="FormCrearAdmin__container" onSubmit={handleSubmit}>
-            <Label text="Tu nombre" />
-            <Input value={formValues.nombre} onChange={handleChange} name="nombre" />
+            <Label text="Tu nombre" id="nombre"/>
+            <Input value={formValues.nombre} onChange={handleChange} name="nombre" id="nombre"/>
             <div className="radioButtonsContainer"> 
               <RadioButton 
                 label="Jugador" 
@@ -59,7 +59,7 @@ const CrearUserAdmin = () => {
                 onChange={handleChange}
               />
             </div>
-            <ButtonBlanco text="Continuar" onClick={handleSubmit} disabled={!formValido} />
+            <ButtonBlanco text="Continuar" type="submit" onClick={handleSubmit} disabled={!formValido} />
             
           </form>
         </section>

@@ -1,9 +1,9 @@
 import React from 'react';
 import './ButtonBlanco.css';
 
-const ButtonBlanco = ({ text, onClick, disabled }) => {
+const ButtonBlanco = ({ text, type, disabled, onClick }) => {
   return (
-    <button className="button" onClick={onClick} disabled={disabled}>
+    <button className="button" type={type} disabled={disabled} onClick={onClick}>
       {text}
     </button>
   );

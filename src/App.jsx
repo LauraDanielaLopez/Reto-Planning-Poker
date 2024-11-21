@@ -1,5 +1,4 @@
 import React from 'react';
-import LayoutCenter from './components/layouts/LayoutCenter/LayoutCenter.jsx';
 import CrearPartida from './components/moleculas/CrearPartida/CrearPartida.jsx';
 import './App.css';
 import CrearUserAdmin from './components/moleculas/CrearUserAdmin/CrearUserAdmin.jsx';
