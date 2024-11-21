@@ -1,0 +1,54 @@
+@import url(../../../index.css);
+
+.radioButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.radioButton__label {
+  font-size: var(--font-size);
+  color: var(--blanco); 
+  display: flex;
+  align-items: center;
+}
+
+.radioButton__input {
+  appearance: none; 
+  margin-left: 6px;
+  width: 21px; 
+  height: 21px; 
+  border: 2px solid var(--MoradoClaro); 
+  border-radius: 50%; 
+  cursor: pointer;
+  position: relative; 
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.radioButton__input:checked {
+  background-color: transparent; 
+  border-color: var(--MoradoClaro); 
+}
+
+.radioButton__input:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--MoradoClaro); 
+}
+
+.radioButton__input::after {
+  content: ""; 
+  width: 10px; 
+  height: 10px;
+  background-color: var(--MoradoClaro);
+  border-radius: 50%; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); 
+  transition: transform 0.3s ease-in-out; 
+}
+
+.radioButton__input:checked::after {
+  transform: translate(-50%, -50%) scale(1); 
+}

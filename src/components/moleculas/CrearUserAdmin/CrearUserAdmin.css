@@ -1,0 +1,22 @@
+@import url(../../../index.css);
+
+.FormCrearAdmin {
+    text-align: center;
+}
+  
+.FormCrearAdmin__container {
+    background-color: transparent;
+    border: 1px solid var(--MoradoClaro);
+    border-radius: 25px;
+    padding: 60px;
+    width: 514px;
+    height: 294px;
+    max-width: 400px;
+    box-shadow: 0 0 5px var(--MoradoClaro); 
+}
+
+.radioButtonsContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
