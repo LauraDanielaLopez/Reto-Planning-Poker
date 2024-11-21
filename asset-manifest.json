@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Reto-Planning-Poker/static/css/main.e05f6626.css",
+    "main.js": "/Reto-Planning-Poker/static/js/main.c8c21e21.js",
+    "index.html": "/Reto-Planning-Poker/index.html",
+    "main.e05f6626.css.map": "/Reto-Planning-Poker/static/css/main.e05f6626.css.map",
+    "main.c8c21e21.js.map": "/Reto-Planning-Poker/static/js/main.c8c21e21.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e05f6626.css",
+    "static/js/main.c8c21e21.js"
+  ]
+}
