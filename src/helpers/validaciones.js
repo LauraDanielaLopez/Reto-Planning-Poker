@@ -10,3 +10,9 @@ export const validarNombre = (nombre) => {
   const numeros = nombre.replace(/[^0-9]/g, "").length;
   return regex.test(nombre) && numeros <= 3;
 };
+
+// Función para capitalizar la primera letra
+export const capitalizeFirstLetter = (string) => {
+  if (!string) return "";
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+};

@@ -1,12 +1,15 @@
 :root{
     --backgroundFondo: radial-gradient(50% 50% at 50% 50%, #330072 0%, rgba(31, 13, 63, 0.9) 100%);
     --blanco: rgb(255, 255, 255);
+    --NEGRO: #0000000F;
     --font-size: 14px;
     --MoradoClaro: #BB65FF;
+    --MoradoMedio: #6429CD;
     --MoradoOscuro: #330072;
     --border-radius: 50px;
-    --FondoDisabled: #9D9DA14D;
+    --FondoDisabled: #9D9DA14D; 
     --letraDisabled: #9D9DA199;
+    --buttonUsuario: #BDBDFF;
 }
 
 * {

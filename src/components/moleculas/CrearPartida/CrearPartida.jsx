@@ -7,6 +7,7 @@ import { validarCrearPartida } from '../../../helpers/validaciones.js';
 import LayoutCenter from '../../layouts/LayoutCenter/LayoutCenter.jsx';
 import HeaderCrearPartida from '../../Header/header.jsx';
 import { useNavigate } from "react-router-dom";
+import { envia } from '../../../helpers/ajax.js';
 
 const CrearPartida = () => {
   const [gameName, setGameName] = useState('');
@@ -19,12 +20,31 @@ const CrearPartida = () => {
     setIsValid(validarCrearPartida(value));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (isValid) {
-      alert(`Partida creada: ${gameName}`);
-      navegacion("/crearAdmin");
+        try {
+            const nuevaPartida = { nombre: gameName };
+            console.log("Nueva partida:", nuevaPartida);
+
+            const partidaCreada = await envia("partidas", nuevaPartida);
+
+            if (!partidaCreada) {
+                console.error("Error: No se pudo crear la partida");
+                return;
+            }
+
+            // Limpia el estado después de crear
+            setGameName("");
+            setIsValid(false);
+
+            console.log(`Partida creada: ${partidaCreada.nombre}`);
+            navegacion("/crearAdmin", { state: { partidaId: partidaCreada.id } });
+        } catch (error) {
+            console.log("Error a crear partida: ", error);
+        }
     }
-  };
+};
+
 
   return (
     <div>

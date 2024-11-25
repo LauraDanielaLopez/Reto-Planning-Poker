@@ -7,11 +7,18 @@ import { validarNombre } from "../../../helpers/validaciones";
 import RadioButton from "../../atomos/RadioButton/RadioButton";
 import LayoutCenter from "../../layouts/LayoutCenter/LayoutCenter";
 import HeaderCrearPartida from "../../Header/header";
+import { envia } from "../../../helpers/ajax";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const CrearUserAdmin = () => {
+  const navegacion = useNavigate();
+  
+  const location = useLocation();
+  const partidaId = location.state?.partidaId;
+
   const [formValues, setFormValues] = useState({
     nombre: "",
-    visualizacion: "",
+    visualizacion: ""
   });
 
   const handleChange = (e) => {
@@ -19,7 +26,7 @@ const CrearUserAdmin = () => {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     //validacion del nombre 
@@ -27,12 +34,32 @@ const CrearUserAdmin = () => {
       alert("Por favor, completa todos los campos.");
       return;
     }
+    
+    // Crear un nuevo usuario en el backend
+    const nuevoUsuario = {
+      nombre: formValues.nombre,
+      visualizacion: formValues.visualizacion,
+      rol: "propietario",
+      partidaId: partidaId, // Asociamos el usuario con la partida
+    };
 
-    console.log("Formulario enviado:", formValues);
+    try {
+      console.log("Nuevo usuario:", nuevoUsuario);
+      await envia("usuarios", nuevoUsuario);
+  
+      // Limpia el formulario después de crear
+      setFormValues({ nombre: "", visualizacion: "" });
+  
+      alert(`Usuario "${formValues.nombre}" creado como propietario de la partida.`);
+      navegacion("/visualizarMesa");
+    } catch (error) {
+      console.log("Error al crear usuario: ", error);
+    }
   };
+  
 
   // Verifica si el nombre es válido y si se seleccionó un radio button
-  const formValido = validarNombre(formValues.nombre) && formValues.visualizacion;
+  const formValido = formValues.nombre && formValues.visualizacion; 
 
   return (
     <div>

@@ -1,0 +1,45 @@
+@import url(../../../index.css);
+
+.card__container {
+  width: 50px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+  
+.card {
+  width: 35px;
+  height: 60px;
+  border-radius: 7px;
+  border: 1px;
+  opacity: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: 0px 0px 6px 0px #BDBDFF99 inset;
+  box-shadow: 0px 5px 10px 0px var(--MoradoMedio);
+}
+
+  
+.card__border {
+  border: 1px solid var(--MoradoClaro); /* Borde específico para la carta */
+}
+  
+.jugador .card {
+  background-color: var(--MoradoClaro); /* Carta normal */
+}
+  
+/* Carta espectador */
+/* .espectador .card {
+  background-color: var(--MoradoMedio); 
+} */
+
+/* Hacer visible la carta cuando esté seleccionada */
+.card__container.carta-seleccionada .card {
+  opacity: 1;  /* Carta visible cuando seleccionada */
+}
+  

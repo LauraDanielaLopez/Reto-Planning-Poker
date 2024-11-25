@@ -1,0 +1,28 @@
+@import url(../../../../index.css);
+
+.buttonUsuario {
+    width: 36px;
+    height: 36px;
+    top: 47px;
+    left: 1218px;
+    border-radius: 32px;
+    opacity: 0px;
+    border: none;
+    background: var(--buttonUsuario);
+    color: var(--MoradoOscuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonUsuario__text{
+    font-size: var(--font-size);
+    font-weight: 700;
+    line-height: 19.6px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

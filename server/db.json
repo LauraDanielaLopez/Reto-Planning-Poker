@@ -1,0 +1,80 @@
+{
+  "usuarios": [
+    {
+      "id": "966d",
+      "nombre": "laura",
+      "visualizacion": "jugador",
+      "rol": "propietario",
+      "partidaId": "2490"
+    },
+    {
+      "id": "55b9",
+      "nombre": "nani33",
+      "visualizacion": "jugador",
+      "rol": "propietario",
+      "partidaId": "8cfe"
+    },
+    {
+      "id": "a8a7",
+      "nombre": "daniela",
+      "visualizacion": "jugador",
+      "rol": "propietario",
+      "partidaId": "1b7c"
+    },
+    {
+      "id": "0769",
+      "nombre": "Laura",
+      "visualizacion": "jugador",
+      "rol": "propietario",
+      "partidaId": "6fbc"
+    },
+    {
+      "id": "e878",
+      "nombre": "silvia",
+      "visualizacion": "jugador",
+      "rol": "propietario",
+      "partidaId": "fe0b"
+    }
+  ],
+  "partidas": [
+    {
+      "id": "2490",
+      "nombre": "sprint"
+    },
+    {
+      "id": "8cfe",
+      "nombre": "sprint 32"
+    },
+    {
+      "id": "1b7c",
+      "nombre": "mi partida"
+    },
+    {
+      "id": "6fbc",
+      "nombre": "sprint 32"
+    },
+    {
+      "id": "fe0b",
+      "nombre": "partida 123"
+    }
+  ],
+  "roles": [
+    {
+      "id_usuario": 1,
+      "nuevo_rol": "administrador",
+      "id": "89e9"
+    }
+  ],
+  "visualizacion": [
+    {
+      "id_usuario": 1,
+      "nombre_visualizacion": "jugador",
+      "id": "171b"
+    },
+    {
+      "id_usuario": 1,
+      "nombre_visualizacion": "espectador",
+      "id": "ec4e"
+    }
+  ]
+}

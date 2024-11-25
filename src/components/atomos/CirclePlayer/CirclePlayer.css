@@ -1,0 +1,48 @@
+@import url(../../../index.css);
+
+.mesa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 603px;
+  height: 345px;
+  border-radius: 276px;
+  opacity: 0px;
+  border: 2px solid var(--MoradoMedio);
+  box-shadow: 0px 0px 20px 0px #BDBDFF33 inset;
+  box-shadow: 0px 0px 15px 0px var(--MoradoMedio);
+}
+
+.circle__mediano{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 555px;
+  height: 298px;
+  border-radius: 276px;
+  opacity: 0px;
+  border: 2px solid #6429CD;
+  box-shadow: 0px 0px 20px 0px #BDBDFF99 inset;
+  box-shadow: 0px 12px 24px 0px var(--MoradoMedio);
+}
+
+.circle__pequeno{
+  width: 521px;
+  height: 272px;
+  border-radius: 276px;
+  opacity: 0px;
+  background: #1F0D3F99;
+  border: 1px solid var(--MoradoMedio);
+  box-shadow: 0px 3px 6px 0px var(--negro);
+  box-shadow: 0px 4px 4px 0px var(--negro);
+}
+.circle--center {
+  height: 100px;
+  width: 100px;
+}
+  
