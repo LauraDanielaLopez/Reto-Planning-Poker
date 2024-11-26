@@ -1,5 +1,5 @@
 import {URL} from '../helpers/config';
-import {envia} from '../helpers/ajax';
+import { envia } from './ajax';
 
 export const obtenerUsuarios = async () => {
   return await fetch(`${URL}/usuarios`).then((res) => res.json());

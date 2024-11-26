@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Label from '../../atomos/Label/Label.jsx';
 import Input from '../../atomos/Input/Input.jsx';
-import ButtonBlanco from '../../atomos/Buttons/ButtonBlanco.jsx';
+import ButtonBlanco from '../../atomos/Buttons/ButtonBlanco/ButtonBlanco.jsx';
 import './CrearPartida.css';
 import { validarCrearPartida } from '../../../helpers/validaciones.js';
-import LayoutCenter from '../../layouts/LayoutCenter/LayoutCenter.jsx';
-import HeaderCrearPartida from '../../Header/header.jsx';
+import LayoutCenter from '../../atomos/LayoutCenter/LayoutCenter.jsx';
+import HeaderCrearPartida from '../../organismos/headerInicio/header.jsx';
 import { useNavigate } from "react-router-dom";
-import { envia } from '../../../helpers/ajax.js';
+import { envia } from '../../../services/ajax.js';
 
 const CrearPartida = () => {
   const [gameName, setGameName] = useState('');

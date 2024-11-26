@@ -1,5 +1,5 @@
 //importamos la constaante
-import { URL } from "./config.js"
+import { URL } from "../helpers/config.js"
 //resibe como parametro el endpoint
 
 export const obtenerDatos = async (endpoint) => {

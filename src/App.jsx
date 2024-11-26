@@ -1,9 +1,9 @@
 import React from 'react';
-import CrearPartida from './components/moleculas/CrearPartida/CrearPartida.jsx';
+import CrearPartida from './components/pages/CrearPartida/CrearPartida.jsx';
 import './App.css';
-import CrearUserAdmin from './components/moleculas/CrearUserAdmin/CrearUserAdmin.jsx';
+import CrearUserAdmin from './components/pages/CrearUserAdmin/CrearUserAdmin.jsx';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import VisualizarMesa from './components/moleculas/VisualizarMesa/VisualizarMesa.jsx';
+import VisualizarMesa from './components/pages/VisualizarMesa/VisualizarMesa.jsx';
 
 const App = () => {
   // Detectar si estamos en producción o desarrollo

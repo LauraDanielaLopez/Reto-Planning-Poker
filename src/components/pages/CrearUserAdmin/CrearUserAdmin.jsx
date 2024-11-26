@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Label from "../../atomos/Label/Label";
 import Input from "../../atomos/Input/Input";
-import ButtonBlanco from "../../atomos/Buttons/ButtonBlanco";
+import ButtonBlanco from "../../atomos/Buttons/ButtonBlanco/ButtonBlanco";
 import "./CrearUserAdmin.css";
 import { validarNombre } from "../../../helpers/validaciones";
-import RadioButton from "../../atomos/RadioButton/RadioButton";
-import LayoutCenter from "../../layouts/LayoutCenter/LayoutCenter";
-import HeaderCrearPartida from "../../Header/header";
-import { envia } from "../../../helpers/ajax";
+import RadioButton from "../../atomos/RadioButtonSelect/RadioButton";
+import LayoutCenter from "../../atomos/LayoutCenter/LayoutCenter";
+import HeaderCrearPartida from "../../organismos/headerInicio/header";
+import { envia } from "../../../services/ajax";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const CrearUserAdmin = () => {

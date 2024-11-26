@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./VisualizarMesa.css";
-import Circle from "../../atomos/CirclePlayer/CirclePlayer.jsx";
+import Circle from "../../atomos/PlayerTable/PlayerTable.jsx";
 import CardJugador from "../../atomos/Cards/CardJugador.jsx";
-import HeaderMesa from "../../Header/headerMesa/HeaderMesa.jsx";
-import { obtenerDatos } from "../../../helpers/ajax.js";
+import HeaderMesa from "../../organismos/headerMesa/HeaderMesa.jsx";
+import { obtenerDatos } from "../../../services/ajax.js";
 import { capitalizeFirstLetter } from "../../../helpers/validaciones.js";
 
 const VisualizarMesa = () => {

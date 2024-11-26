@@ -1,11 +1,11 @@
 import React from "react";
-import './HeaderMesa.css';
+import './navegacion.css';
 import InvitarJugador from '../../atomos/Buttons/InvitarJugador/InvitarJugador';
 import { useNavigate } from "react-router-dom";
 import ButtonUsuario from "../../atomos/Buttons/Usuario/usuario";
 
-const HeaderMesa = ({ text, jugador }) => {
-  const basePath = process.env.NODE_ENV === "production" ? "/Reto-Planning-Poker" : "";
+
+const NavegacionNav = ({ text, jugador }) => {
   const navegacion = useNavigate();
 
   const handleSubmit = () => {
@@ -29,24 +29,14 @@ const HeaderMesa = ({ text, jugador }) => {
   };
 
   const inicialesJugador = getInitials(jugador);
-  
-
   return (
-    <header className="headerMesa">
-      <div className="headerMesa__content">
-      <img
-        src={`${basePath}/isotipoP.png`}
-        alt="Isotipo de pragma"
-        className="headerMesa__logo"
-      />
-        <h1 className="headerMesa__text">{text}</h1>
-        <div className="headerMesa__group">
-        <ButtonUsuario text={`${inicialesJugador}`} />
-        <InvitarJugador text="Invitar jugadores" type="submit" onClick={handleSubmit} />
-        </div>
-      </div>
-    </header>
+    <div>
+        <nav className="headerMesa__group">
+          <ButtonUsuario text={`${inicialesJugador}`} />
+          <InvitarJugador text="Invitar jugadores" type="submit" onClick={handleSubmit} />
+        </nav>
+    </div>
   );
 };
 
-export default HeaderMesa;
+export default NavegacionNav;
