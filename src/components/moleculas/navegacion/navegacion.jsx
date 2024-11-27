@@ -9,7 +9,7 @@ const NavegacionNav = ({ text, jugador }) => {
   const navegacion = useNavigate();
 
   const handleSubmit = () => {
-    navegacion("/");
+    navegacion("/invitar");
   };
 
   const getInitials = (nombre) => {

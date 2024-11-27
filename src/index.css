@@ -3,11 +3,13 @@
     --blanco: rgb(255, 255, 255);
     --NEGRO: #0000000F;
     --font-size: 14px;
+    --fucsia: #E4A4FF;
     --MoradoClaro: #BB65FF;
     --MoradoMedio: #6429CD;
     --MoradoOscuro: #330072;
+    --Oscuro: #1F0D3F;
     --border-radius: 50px;
-    --FondoDisabled: #9D9DA14D; 
+    --FondoDisabled: #9D9DA14D;
     --letraDisabled: #9D9DA199;
     --buttonUsuario: #BDBDFF;
 }

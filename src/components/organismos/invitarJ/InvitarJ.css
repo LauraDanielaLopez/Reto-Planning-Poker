@@ -1,0 +1,34 @@
+@import url(../../../index.css);
+
+.invitarJ {
+    max-width: 590px;
+    padding-top: 180px;
+    margin: 0 auto; /* Centra el componente horizontalmente */
+}
+
+.invitarJ__text {
+    color: white;
+    background-color: var(--MoradoMedio);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 17px 23px;
+    border-radius: 25px 25px 0 0;
+}
+
+
+.invitarJ__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 46px 20px 30px 20px;
+    border: 1px solid var(--MoradoClaro);
+    background-color: var(--Oscuro);
+    border-top: none;
+    box-shadow: 0 0 5px var(--MoradoClaro);
+    gap: 15px;
+    border-radius: 0px 0px 25px 25px;
+}
+
+
+

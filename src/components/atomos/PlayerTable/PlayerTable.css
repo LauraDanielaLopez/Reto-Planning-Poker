@@ -9,8 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 603px;
-  height: 345px;
+  width: 525px;
+  height: 300px;
   border-radius: 276px;
   opacity: 0px;
   border: 2px solid var(--MoradoMedio);
@@ -22,8 +22,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 555px;
-  height: 298px;
+  width: 483px;
+  height: 260px;
   border-radius: 276px;
   opacity: 0px;
   border: 2px solid #6429CD;
@@ -32,8 +32,8 @@
 }
 
 .circle__pequeno{
-  width: 521px;
-  height: 272px;
+  width: 453px;
+  height: 237px;
   border-radius: 276px;
   opacity: 0px;
   background: #1F0D3F99;

@@ -1,7 +1,7 @@
 import React from "react";
 import "./CardJugador.css";
 
-const CardJugador = ({ tipo, cartaSeleccionada }) => {
+const CardJugador = ({ tipo, cartaSeleccionada, nombre }) => {
   const renderCard = () => {
     if (!cartaSeleccionada) {
       return <div className="card card__border"></div>; // Carta en blanco
@@ -12,8 +12,10 @@ const CardJugador = ({ tipo, cartaSeleccionada }) => {
   return (
     <div className={`card__container ${tipo}`}>
       {renderCard()}
+      <h3 className="card__label">{nombre}</h3> {/* Nombre debajo de la carta */}
     </div>
   );
 };
 
 export default CardJugador;
+

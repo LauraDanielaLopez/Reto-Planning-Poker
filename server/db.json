@@ -34,6 +34,27 @@
       "visualizacion": "jugador",
       "rol": "propietario",
       "partidaId": "fe0b"
+    },
+    {
+      "id": "ff3d",
+      "nombre": "Laura",
+      "visualizacion": "jugador",
+      "rol": "propietario",
+      "partidaId": "0268"
+    },
+    {
+      "id": "62cf",
+      "nombre": "Laura",
+      "visualizacion": "jugador",
+      "rol": "propietario",
+      "partidaId": "2ab0"
+    },
+    {
+      "id": "5a27",
+      "nombre": "Laura",
+      "visualizacion": "jugador",
+      "rol": "propietario",
+      "partidaId": "ca90"
     }
   ],
   "partidas": [
@@ -56,6 +77,18 @@
     {
       "id": "fe0b",
       "nombre": "partida 123"
+    },
+    {
+      "id": "0268",
+      "nombre": "partida 123"
+    },
+    {
+      "id": "2ab0",
+      "nombre": "sprint"
+    },
+    {
+      "id": "ca90",
+      "nombre": "sprint"
     }
   ],
   "roles": [

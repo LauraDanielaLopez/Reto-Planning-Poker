@@ -1,0 +1,44 @@
+@import url(../../../index.css);
+
+.cardV{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardV__text{
+    padding: 21px 0px 2px 0px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 21px;
+}
+
+.cardVotacion{
+    display: flex;
+}
+
+.cardVotacion__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 80px;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid var(--MoradoClaro);
+    box-shadow: 0px 12px 24px 0px #FFFFFF66;
+    box-shadow: 0px 4px 24px 0px #FFFFFF3D;
+    transition: 0.5s ease;
+    font-weight: 600;
+
+}
+
+.cardVotacion__item:hover{
+    background-color: var(--letraDisabled);
+    
+}
+
+.cardVotacion__item:active{
+    background-color: var(--fucsia);
+}

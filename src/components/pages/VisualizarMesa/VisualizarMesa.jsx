@@ -5,6 +5,7 @@ import CardJugador from "../../atomos/Cards/CardJugador.jsx";
 import HeaderMesa from "../../organismos/headerMesa/HeaderMesa.jsx";
 import { obtenerDatos } from "../../../services/ajax.js";
 import { capitalizeFirstLetter } from "../../../helpers/validaciones.js";
+import CardVotacion from "../../moleculas/CardVotacion/CardVotacion.jsx";
 
 const VisualizarMesa = () => {
 
@@ -49,8 +50,11 @@ const VisualizarMesa = () => {
           <div
             className={`votacion-jugador ${jugador.tipo} `}
             key={index}>
-            <CardJugador tipo={jugador.tipo} cartaSeleccionada={jugador.cartaSeleccionada} />
-            <h3>{capitalizeFirstLetter(jugador.nombre)}</h3>
+            <CardJugador
+              tipo={jugador.tipo}
+              cartaSeleccionada={jugador.cartaSeleccionada}
+              nombre={jugador.nombre}/>
+            <CardVotacion />
           </div>
         ))}
       </div>
