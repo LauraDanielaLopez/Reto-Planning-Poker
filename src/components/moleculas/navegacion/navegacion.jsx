@@ -1,15 +1,17 @@
-import React from "react";
+import React, {  } from "react";
 import './navegacion.css';
 import InvitarJugador from '../../atomos/Buttons/InvitarJugador/InvitarJugador';
 import { useNavigate } from "react-router-dom";
 import ButtonUsuario from "../../atomos/Buttons/Usuario/usuario";
 
 
-const NavegacionNav = ({ text, jugador }) => {
+const NavegacionNav = ({ text, jugador, openModal, closeModal }) => {
   const navegacion = useNavigate();
-
+  
   const handleSubmit = () => {
+    openModal();
     navegacion("/invitar");
+    
   };
 
   const getInitials = (nombre) => {

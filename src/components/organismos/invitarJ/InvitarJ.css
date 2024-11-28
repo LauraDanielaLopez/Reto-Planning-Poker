@@ -4,6 +4,8 @@
     max-width: 590px;
     padding-top: 180px;
     margin: 0 auto; /* Centra el componente horizontalmente */
+    z-index: 1000;
+    backdrop-filter: blur(8px);
 }
 
 .invitarJ__text {

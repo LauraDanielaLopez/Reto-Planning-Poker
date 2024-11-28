@@ -28,7 +28,7 @@ const VisualizarMesa = () => {
 
         setPartida(partidaActiva);
         // Filtra los jugadores que pertenecen a esta partida
-        setJugadores(datosJugador.filter(j => j.partidaId === partidaActiva?.id));
+        setJugadores(datosJugador.filter(j =>  j.partidaId === partidaActiva?.id));
 
       }catch(error){
         console.log("error al cargar los datos: ", error);
@@ -42,13 +42,13 @@ const VisualizarMesa = () => {
 
   
   return (
-    <div className="votacion-container">
+    <div className="votacion">
       <HeaderMesa text={capitalizeFirstLetter(partida?.nombre)} jugador={jugadores[0]?.nombre || "Usuario"} />
       <Circle/>
-      <div className="votacion-mesa">
+      <div className="votacion__mesa">
         {jugadores.map((jugador, index) => (
           <div
-            className={`votacion-jugador ${jugador.tipo} `}
+            className={`votacion__jugador ${jugador.tipo} `}
             key={index}>
             <CardJugador
               tipo={jugador.tipo}

@@ -12,9 +12,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const CrearUserAdmin = () => {
   const navegacion = useNavigate();
-  
   const location = useLocation();
   const partidaId = location.state?.partidaId;
+
 
   const [formValues, setFormValues] = useState({
     nombre: "",
@@ -43,14 +43,24 @@ const CrearUserAdmin = () => {
       partidaId: partidaId, // Asociamos el usuario con la partida
     };
 
+    // Crear un nuevo usuario en el backend
+    const nuevoJugador = {
+      nombre: formValues.nombre,
+      visualizacion: formValues.visualizacion,
+      partidaId: partidaId, // Asociamos el usuario con la partida
+    };
+
     try {
       console.log("Nuevo usuario:", nuevoUsuario);
       await envia("usuarios", nuevoUsuario);
+
+      console.log("Nuevo jugador:", nuevoJugador);
+      await envia("usuarios", nuevoJugador);
   
       // Limpia el formulario después de crear
       setFormValues({ nombre: "", visualizacion: "" });
   
-      alert(`Usuario "${formValues.nombre}" creado como propietario de la partida.`);
+      alert(`Usuario "${formValues.nombre}" creado.`);
       navegacion("/visualizarMesa");
     } catch (error) {
       console.log("Error al crear usuario: ", error);

@@ -1,93 +1,22 @@
 {
   "usuarios": [
     {
-      "id": "966d",
+      "id": "89e0",
       "nombre": "laura",
       "visualizacion": "jugador",
       "rol": "propietario",
-      "partidaId": "2490"
+      "partidaId": "e731"
     },
     {
-      "id": "55b9",
-      "nombre": "nani33",
-      "visualizacion": "jugador",
-      "rol": "propietario",
-      "partidaId": "8cfe"
-    },
-    {
-      "id": "a8a7",
-      "nombre": "daniela",
-      "visualizacion": "jugador",
-      "rol": "propietario",
-      "partidaId": "1b7c"
-    },
-    {
-      "id": "0769",
-      "nombre": "Laura",
-      "visualizacion": "jugador",
-      "rol": "propietario",
-      "partidaId": "6fbc"
-    },
-    {
-      "id": "e878",
+      "id": "daaa",
       "nombre": "silvia",
       "visualizacion": "jugador",
-      "rol": "propietario",
-      "partidaId": "fe0b"
-    },
-    {
-      "id": "ff3d",
-      "nombre": "Laura",
-      "visualizacion": "jugador",
-      "rol": "propietario",
-      "partidaId": "0268"
-    },
-    {
-      "id": "62cf",
-      "nombre": "Laura",
-      "visualizacion": "jugador",
-      "rol": "propietario",
-      "partidaId": "2ab0"
-    },
-    {
-      "id": "5a27",
-      "nombre": "Laura",
-      "visualizacion": "jugador",
-      "rol": "propietario",
-      "partidaId": "ca90"
+      "rol": "propietario"
     }
   ],
   "partidas": [
     {
-      "id": "2490",
-      "nombre": "sprint"
-    },
-    {
-      "id": "8cfe",
-      "nombre": "sprint 32"
-    },
-    {
-      "id": "1b7c",
-      "nombre": "mi partida"
-    },
-    {
-      "id": "6fbc",
-      "nombre": "sprint 32"
-    },
-    {
-      "id": "fe0b",
-      "nombre": "partida 123"
-    },
-    {
-      "id": "0268",
-      "nombre": "partida 123"
-    },
-    {
-      "id": "2ab0",
-      "nombre": "sprint"
-    },
-    {
-      "id": "ca90",
+      "id": "e731",
       "nombre": "sprint"
     }
   ],

@@ -1,28 +1,24 @@
-.votacion-container {
+.votacion {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  .votacion-title {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 20px;
-  }
-  
-  .votacion-mesa {
+  .votacion__mesa {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
   
-  .votacion-jugador {
+  .votacion__jugador {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px;
     color: #fff;
   }
+
+  
   
   .votacion-jugador.jugador {
     /* Estilo para jugadores */
