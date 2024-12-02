@@ -1,23 +1,49 @@
 {
   "usuarios": [
     {
-      "id": "89e0",
-      "nombre": "laura",
+      "id": "169b",
+      "nombre": "daniela",
       "visualizacion": "jugador",
       "rol": "propietario",
-      "partidaId": "e731"
+      "partidaId": "8044",
+      "cartaSeleccionada": null
     },
     {
-      "id": "daaa",
+      "id": "432f",
       "nombre": "silvia",
       "visualizacion": "jugador",
-      "rol": "propietario"
+      "rol": "invitado",
+      "cartaSeleccionada": null
+    },
+    {
+      "id": "788f",
+      "nombre": "Laura",
+      "visualizacion": "jugador",
+      "rol": "invitado",
+      "partidaId": null,
+      "cartaSeleccionada": null
+    },
+    {
+      "id": "8046",
+      "nombre": "Laura",
+      "visualizacion": "jugador",
+      "rol": "propietario",
+      "partidaId": "b7d8",
+      "cartaSeleccionada": null
     }
   ],
   "partidas": [
     {
-      "id": "e731",
+      "id": "8044",
+      "nombre": "sprint 32"
+    },
+    {
+      "id": "dcc8",
       "nombre": "sprint"
+    },
+    {
+      "id": "b7d8",
+      "nombre": "sprint 32"
     }
   ],
   "roles": [

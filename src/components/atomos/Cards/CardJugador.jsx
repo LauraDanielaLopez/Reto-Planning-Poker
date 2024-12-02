@@ -2,11 +2,16 @@ import React from "react";
 import "./CardJugador.css";
 
 const CardJugador = ({ tipo, cartaSeleccionada, nombre }) => {
+
   const renderCard = () => {
     if (!cartaSeleccionada) {
       return <div className="card card__border"></div>; // Carta en blanco
     }
-    return <div className="card">{cartaSeleccionada}</div>; // Carta seleccionada
+    return (
+      <div className={`card ${cartaSeleccionada ? "carta-seleccionada" : ""}`}>
+        {/* {cartaSeleccionada} se quita para que no se muestre eel valor en la card*/} 
+      </div>
+    ); // Carta seleccionada
   };
 
   return (
@@ -18,4 +23,3 @@ const CardJugador = ({ tipo, cartaSeleccionada, nombre }) => {
 };
 
 export default CardJugador;
-

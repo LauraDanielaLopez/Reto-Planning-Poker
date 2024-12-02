@@ -9,11 +9,15 @@ import LayoutCenter from "../../atomos/LayoutCenter/LayoutCenter";
 import HeaderCrearPartida from "../../organismos/headerInicio/header";
 import { envia } from "../../../services/ajax";
 import { useNavigate, useLocation } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 const CrearUserAdmin = () => {
   const navegacion = useNavigate();
   const location = useLocation();
   const partidaId = location.state?.partidaId;
+  const { v4: uuidv4 } = require('uuid');
+  // Genera un uuid completo y toma los primeros 4 caracteres
+  const id = uuidv4().substring(0, 4);
 
 
   const [formValues, setFormValues] = useState({
@@ -35,34 +39,44 @@ const CrearUserAdmin = () => {
       return;
     }
     
+    
     // Crear un nuevo usuario en el backend
     const nuevoUsuario = {
+      id: id,  // Genera un id único para cada usuario
       nombre: formValues.nombre,
       visualizacion: formValues.visualizacion,
-      rol: "propietario",
-      partidaId: partidaId, // Asociamos el usuario con la partida
+      rol: partidaId ? "propietario" : "invitado", // Detecta el rol automáticamente
+      partidaId: partidaId,
+      cartaSeleccionada: null,
     };
-
-    // Crear un nuevo usuario en el backend
-    const nuevoJugador = {
-      nombre: formValues.nombre,
-      visualizacion: formValues.visualizacion,
-      partidaId: partidaId, // Asociamos el usuario con la partida
-    };
+    console.log(nuevoUsuario);
+    
 
     try {
-      console.log("Nuevo usuario:", nuevoUsuario);
+      // Guardar el usuario en el localStorage
+      localStorage.setItem('usuario', JSON.stringify(nuevoUsuario));
+      
       await envia("usuarios", nuevoUsuario);
-
-      console.log("Nuevo jugador:", nuevoJugador);
-      await envia("usuarios", nuevoJugador);
-  
-      // Limpia el formulario después de crear
       setFormValues({ nombre: "", visualizacion: "" });
-  
-      alert(`Usuario "${formValues.nombre}" creado.`);
-      navegacion("/visualizarMesa");
-    } catch (error) {
+      alert(`Usuario "${formValues.nombre}" creado exitosamente.`);
+
+      if (!nuevoUsuario.partidaId || !nuevoUsuario.id || !nuevoUsuario.rol) {
+        console.error("Datos faltantes para navegar: ", nuevoUsuario);
+        return;
+      }
+
+      console.log("Datos para navegar:", {
+        partidaId: nuevoUsuario.partidaId,
+        jugadorId: nuevoUsuario.id,
+        tipo: nuevoUsuario.rol,
+      });
+      
+      // Redirigir al usuario a la ruta correspondiente
+      navegacion("/visualizarMesa", {
+        state: { partidaId: nuevoUsuario.partidaId, jugadorId: nuevoUsuario.id, tipo: nuevoUsuario.rol },
+      });
+
+  } catch (error) {
       console.log("Error al crear usuario: ", error);
     }
   };

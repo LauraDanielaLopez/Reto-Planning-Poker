@@ -42,3 +42,10 @@
   opacity: 1;  /* Carta visible cuando seleccionada */
 }
   
+/* Carta seleccionada */
+.card.carta-seleccionada {
+  background-color: var(--fucsia); /* Cambia el color cuando la carta está seleccionada */
+}
+.card__container.carta-seleccionada .card {
+  background-color: var(--fucsia);  /* Color cuando está seleccionada */
+}

@@ -4,6 +4,7 @@ import Input from '../../atomos/Input/Input';
 import ButtonBlanco from '../../atomos/Buttons/ButtonBlanco/ButtonBlanco';
 
 const InvitarJ = ({ text, value, onChange }) => {
+
   const handleCopy = () => {
     navigator.clipboard.writeText(value)
       .then(() => alert('¡Link copiado!'))

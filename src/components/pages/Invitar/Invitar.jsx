@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import InvitarJ from '../../organismos/invitarJ/InvitarJ';
 import { obtenerDatos } from '../../../services/ajax';
+import { useLocation } from "react-router-dom";
 
 const Invitar = () => {
+  const location = useLocation();
+  console.log("Estado recibido en VisualizarMesa:", location.state);
+
   const [link, setLink] = useState("");
 
   useEffect(() => {
@@ -13,7 +17,7 @@ const Invitar = () => {
         console.log(partidaActiva);
         
         if(partidaActiva?.id){
-          const linkGenerado =  `${window.location.origin}/crearAdmin?partidaId=${partidaActiva.id}`;
+          const linkGenerado = `${window.location.origin}/crearAdmin?partidaId=${partidaActiva.id}`;
           setLink(linkGenerado)
           console.log(linkGenerado);
         }else{
