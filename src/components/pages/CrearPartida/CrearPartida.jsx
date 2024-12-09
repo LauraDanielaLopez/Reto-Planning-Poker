@@ -23,7 +23,10 @@ const CrearPartida = () => {
   const handleSubmit = async () => {
     if (isValid) {
         try {
-            const nuevaPartida = { nombre: gameName };
+            const nuevaPartida = { 
+              nombre: gameName, 
+              revelado: false 
+            };
             console.log("Nueva partida:", nuevaPartida);
 
             const partidaCreada = await envia("partidas", nuevaPartida);

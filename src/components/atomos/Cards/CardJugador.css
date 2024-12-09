@@ -12,40 +12,64 @@
   width: 35px;
   height: 60px;
   border-radius: 7px;
-  border: 1px;
-  opacity: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid transparent;
+  border: 1px solid var(--MoradoClaro);
   transition: opacity 0.3s ease-in-out;
   box-shadow: 0px 0px 6px 0px #BDBDFF99 inset;
-  box-shadow: 0px 5px 10px 0px var(--MoradoMedio);
+  box-shadow: 0px 1px 10px 0px var(--MoradoMedio);
 }
 
+.card__label{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 14px;
+  padding: 6px 0px 0px 0px;
+
+}
   
 .card__border {
   border: 1px solid var(--MoradoClaro); /* Borde específico para la carta */
 }
   
-.jugador .card {
-  background-color: var(--MoradoClaro); /* Carta normal */
+.card.jugador {
+  background-color: var(--MoradoClaro);
+  border: 2px solid var(--fucsia);
 }
   
-/* Carta espectador */
-/* .espectador .card {
-  background-color: var(--MoradoMedio); 
-} */
+.espectador {
+  background-color: var(--MoradoEspect);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: none; */
+}
+
+
+.iniciales {
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 700;
+  color: var(--MoradoOscuro);
+}
 
 /* Hacer visible la carta cuando esté seleccionada */
-.card__container.carta-seleccionada .card {
+.card__container.carta__seleccionada .card {
   opacity: 1;  /* Carta visible cuando seleccionada */
 }
   
 /* Carta seleccionada */
-.card.carta-seleccionada {
+.card.carta__seleccionada {
   background-color: var(--fucsia); /* Cambia el color cuando la carta está seleccionada */
+  color: transparent;
 }
-.card__container.carta-seleccionada .card {
+.card__container.carta__seleccionada .card {
   background-color: var(--fucsia);  /* Color cuando está seleccionada */
 }

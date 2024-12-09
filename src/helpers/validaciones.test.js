@@ -76,4 +76,5 @@ describe('capitalizeFirstLetter', () => {
     const input = ' hELLO';
     expect(capitalizeFirstLetter(input)).toBe(' Hello');
   });
+  
 });

@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import InvitarJ from '../../organismos/invitarJ/InvitarJ';
 import { obtenerDatos } from '../../../services/ajax';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Invitar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   console.log("Estado recibido en VisualizarMesa:", location.state);
 
+  const handleJoin = () => {
+    navigate("/visualizarInvitado", {
+      state: { partidaId: 123, jugadorId: 456, tipo: "invitado" }
+    });
+  };
+  
   const [link, setLink] = useState("");
 
   useEffect(() => {

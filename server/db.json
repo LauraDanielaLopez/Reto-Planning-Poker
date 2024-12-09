@@ -1,56 +1,30 @@
 {
+  "_routes": {
+    "/usuarios/:id": "/usuarios?id=:id"
+  },
   "usuarios": [
     {
-      "id": "169b",
-      "nombre": "daniela",
+      "id": "9adc",
+      "nombre": "laura",
       "visualizacion": "jugador",
       "rol": "propietario",
-      "partidaId": "8044",
+      "partidaId": "1679",
       "cartaSeleccionada": null
     },
     {
-      "id": "432f",
-      "nombre": "silvia",
+      "id": "75e3",
+      "nombre": "leonardo",
       "visualizacion": "jugador",
       "rol": "invitado",
-      "cartaSeleccionada": null
-    },
-    {
-      "id": "788f",
-      "nombre": "Laura",
-      "visualizacion": "jugador",
-      "rol": "invitado",
-      "partidaId": null,
-      "cartaSeleccionada": null
-    },
-    {
-      "id": "8046",
-      "nombre": "Laura",
-      "visualizacion": "jugador",
-      "rol": "propietario",
-      "partidaId": "b7d8",
+      "partidaId": "1679",
       "cartaSeleccionada": null
     }
   ],
   "partidas": [
     {
-      "id": "8044",
-      "nombre": "sprint 32"
-    },
-    {
-      "id": "dcc8",
-      "nombre": "sprint"
-    },
-    {
-      "id": "b7d8",
-      "nombre": "sprint 32"
-    }
-  ],
-  "roles": [
-    {
-      "id_usuario": 1,
-      "nuevo_rol": "administrador",
-      "id": "89e9"
+      "id": "1679",
+      "nombre": "partida",
+      "revelado": false
     }
   ],
   "visualizacion": [
@@ -60,9 +34,65 @@
       "id": "171b"
     },
     {
-      "id_usuario": 1,
+      "id_usuario": 2,
       "nombre_visualizacion": "espectador",
       "id": "ec4e"
+    }
+  ],
+  "modosPuntaje": [
+    {
+      "nombre": "Fibonacci",
+      "valores": [
+        "0",
+        "1",
+        "3",
+        "5",
+        "8",
+        "13",
+        "21",
+        "34",
+        "55",
+        "89",
+        "?",
+        "☕"
+      ],
+      "id": "3f10"
+    },
+    {
+      "nombre": "De 2 en 2",
+      "valores": [
+        "2",
+        "4",
+        "6",
+        "8",
+        "10",
+        "12",
+        "14",
+        "16",
+        "18",
+        "20",
+        "22",
+        "24"
+      ],
+      "id": "a494"
+    },
+    {
+      "nombre": "De 5 en 5",
+      "valores": [
+        "5",
+        "10",
+        "15",
+        "20",
+        "25",
+        "30",
+        "35",
+        "40",
+        "45",
+        "50",
+        "55",
+        "60"
+      ],
+      "id": "69c5"
     }
   ]
 }

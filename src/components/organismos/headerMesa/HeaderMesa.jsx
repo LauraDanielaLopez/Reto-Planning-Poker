@@ -25,7 +25,11 @@ const HeaderMesa = ({ text, jugador }) => {
         </figure>
 
         <h1 className="headerMesa__text">{text}</h1>
-        <NavegacionNav text={text} jugador={jugador} closeModal={handleModalClose} openModal={handleModalOpen} modalOpen={modalOpen}/>
+        <NavegacionNav 
+          nombre={jugador} 
+          closeModal={handleModalClose} 
+          openModal={handleModalOpen} 
+          modalOpen={modalOpen}/>
       </section>
     </header>
   );

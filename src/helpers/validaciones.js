@@ -6,7 +6,7 @@ export const validarCrearPartida = (name) => {
 };
 
 export const validarNombre = (nombre) => {
-  const regex = /^(?=.*[a-zA-Z])[a-zA-Z0-9]{5,20}$/;
+  const regex = /^(?=.*[a-zA-Z])[a-zA-Z0-9 ]{5,20}$/; // Ahora incluye el espacio en la validación
   const numeros = nombre.replace(/[^0-9]/g, "").length;
   return regex.test(nombre) && numeros <= 3;
 };
@@ -14,5 +14,7 @@ export const validarNombre = (nombre) => {
 // Función para capitalizar la primera letra
 export const capitalizeFirstLetter = (string) => {
   if (!string) return "";
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  // Si la cadena comienza con un espacio, se asegura de que solo se capitalice la primera letra no espacial.
+  return string.charAt(0) === ' ' ? ' ' + string.charAt(1).toUpperCase() + string.slice(2).toLowerCase() : string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 };
+
