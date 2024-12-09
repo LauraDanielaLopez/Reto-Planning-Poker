@@ -4,27 +4,52 @@
   },
   "usuarios": [
     {
-      "id": "9adc",
+      "id": "20ef",
       "nombre": "laura",
       "visualizacion": "jugador",
       "rol": "propietario",
-      "partidaId": "1679",
+      "partidaId": "4a1d",
       "cartaSeleccionada": null
     },
     {
-      "id": "75e3",
+      "id": "089c",
       "nombre": "leonardo",
       "visualizacion": "jugador",
       "rol": "invitado",
-      "partidaId": "1679",
+      "partidaId": "4a1d",
+      "cartaSeleccionada": null
+    },
+    {
+      "id": "327c",
+      "nombre": "daniela",
+      "visualizacion": "jugador",
+      "rol": "invitado",
+      "partidaId": "4a1d",
+      "cartaSeleccionada": null
+    },
+    {
+      "id": "77cc",
+      "nombre": "pardo",
+      "visualizacion": "espectador",
+      "rol": "invitado",
+      "partidaId": "4a1d",
+      "cartaSeleccionada": null
+    },
+    {
+      "id": "a2bf",
+      "nombre": "silvia",
+      "visualizacion": "jugador",
+      "rol": "invitado",
+      "partidaId": "4a1d",
       "cartaSeleccionada": null
     }
   ],
   "partidas": [
     {
-      "id": "1679",
-      "nombre": "partida",
-      "revelado": false
+      "id": "4a1d",
+      "nombre": "sprint",
+      "revelado": false,
+      "modoPuntaje": "Fibonacci"
     }
   ],
   "visualizacion": [

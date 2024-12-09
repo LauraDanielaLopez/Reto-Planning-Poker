@@ -18,10 +18,7 @@ const VisualizarInvitado = () => {
   const [revelado, setRevelado] = useState(false);
   const [promedio, setPromedio] = useState(0); // Estado para promedio
   const [conteoCartas, setConteoCartas] = useState({}); // Estado para conteo de cartas
-  const [modoSeleccionado, setModoSeleccionado] = useState({
-    nombre: "Fibonacci",
-    valores: ["0", "1", "3", "5", "8", "13", "21", "34", "55", "89", "?", "☕"],
-  });
+  const [modoSeleccionado, setModoSeleccionado] = useState(null);
 
   const partidaId = location.state?.partidaId;
   const jugadorId = location.state?.jugadorId;
@@ -31,6 +28,7 @@ const VisualizarInvitado = () => {
       try {
         const datosPartida = await obtenerDatos("partidas");
         const datosJugador = await obtenerDatos("usuarios");
+        const modos = await obtenerDatos("modosPuntaje");
 
         const partidaActiva = datosPartida.find((p) => p.id === partidaId);
         const jugadoresEnPartida = datosJugador.filter(
@@ -43,6 +41,14 @@ const VisualizarInvitado = () => {
 
         const jugador = jugadoresEnPartida.find((j) => j.id === jugadorId);
         setJugadorActual(jugador);
+
+        // Establece el modo seleccionado desde el backend o desde el localStorage
+        const modoGuardado = localStorage.getItem("modoSeleccionado");
+        if (modoGuardado) {
+          setModoSeleccionado(JSON.parse(modoGuardado));  // Recupera el modo guardado
+        } else if (modos.length > 0) {
+          setModoSeleccionado(modos[0]);  // Si no hay modo guardado, selecciona el primero
+        }
       } catch (error) {
         console.error("Error al cargar datos:", error);
       }
@@ -94,28 +100,32 @@ const VisualizarInvitado = () => {
         text={capitalizeFirstLetter(partida?.nombre)}
         jugador={jugadorActual?.nombre || "Usuario"}
       />
-      <Circle />
-      <div className="votacion__mesa">
+      {/* <Circle /> */}
+      <Circle>
+      </Circle>
+      <div className="votacion__mesa contenedor">
         {jugadores.map((jugador) => (
-          <div className={`votacion__jugador invitado`} key={jugador.id}>
+          <div className="card__container" key={jugador.id}>
             <CardJugador
               tipo={jugador.rol}
-              nombre={capitalizeFirstLetter(jugador.nombre)} 
               cartaSeleccionada={jugador.cartaSeleccionada}
+              nombre={capitalizeFirstLetter(jugador.nombre)} 
               isSelec={jugador.cartaSeleccionada !== null}
               revelado={revelado}
               visualizacion={jugador.visualizacion}
             />
-            {jugador.visualizacion !== "espectador" && jugador.id === jugadorActual?.id && !revelado && (
-              <CardVotacion 
-              onCartaSeleccionada={handleCartaSeleccionada}
-              valoresCartas={modoSeleccionado.valores}  />
-            )}
-
-
           </div>
         ))}
       </div>
+      {jugadorActual?.visualizacion !== "espectador" &&
+        !revelado && (
+          <div className="votacion__acciones">
+            <CardVotacion
+              onCartaSeleccionada={handleCartaSeleccionada}
+              valoresCartas={modoSeleccionado ? modoSeleccionado.valores : []}
+            />
+          </div>
+        )}
 
       {/* Sección de resultados visible cuando las cartas están reveladas */}
       {revelado && (

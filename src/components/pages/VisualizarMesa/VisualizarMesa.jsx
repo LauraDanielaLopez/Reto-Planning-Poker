@@ -3,7 +3,7 @@ import "./VisualizarMesa.css";
 import Circle from "../../atomos/PlayerTable/PlayerTable.jsx";
 import CardJugador from "../../atomos/Cards/CardJugador.jsx";
 import HeaderMesa from "../../organismos/headerMesa/HeaderMesa.jsx";
-import { obtenerDatos, actualizarCartaSeleccionada, actualizarRevelado } from "../../../services/ajax.js";
+import { obtenerDatos, actualizarCartaSeleccionada, actualizarRevelado, actualizarModoPuntaje } from "../../../services/ajax.js";
 import { capitalizeFirstLetter } from "../../../helpers/validaciones.js";
 import CardVotacion from "../../moleculas/CardVotacion/CardVotacion.jsx";
 import { useLocation } from "react-router-dom";
@@ -22,10 +22,8 @@ const VisualizarMesa = ({ tipo }) => {
   const [conteoCartas, setConteoCartas] = useState({});
   const [todosHanVotado, setTodosHanVotado] = useState(false);
   const [esAdmin, setEsAdmin] = useState(false);
-  const [modoSeleccionado, setModoSeleccionado] = useState({
-    nombre: "Fibonacci",
-    valores: ["0", "1", "3", "5", "8", "13", "21", "34", "55", "89", "?", "☕"],
-  });
+  const [modosPuntaje, setModosPuntaje] = useState([]);
+  const [modoSeleccionado, setModoSeleccionado] = useState(null);
 
   const partidaId = location.state?.partidaId;
   const jugadorId = location.state?.jugadorId;
@@ -36,6 +34,9 @@ const VisualizarMesa = ({ tipo }) => {
       try {
         const datosPartida = await obtenerDatos("partidas");
         const datosJugador = await obtenerDatos("usuarios");
+        const modos = await obtenerDatos("modosPuntaje");
+        console.log(modos); 
+        setModosPuntaje(modos);
 
         const partidaActiva = datosPartida.find((p) => p.id === partidaId);
         const jugadoresEnPartida = datosJugador.filter(
@@ -53,6 +54,16 @@ const VisualizarMesa = ({ tipo }) => {
         if (jugador.rol === "propietario") {
           setEsAdmin(true);
         }
+
+        // Verificar si hay un modo seleccionado previamente en el localStorage
+      const modoGuardado = localStorage.getItem("modoSeleccionado");
+      if (modoGuardado) {
+        setModoSeleccionado(JSON.parse(modoGuardado)); // Recupera el modo seleccionado almacenado
+        await actualizarModoPuntaje(partidaId, JSON.parse(modoGuardado));  // Establecemos el modo de puntaje para la partida
+      } else if (modos.length > 0) {
+        setModoSeleccionado(modos[0]); // Si no hay modo guardado, se selecciona el primero
+        await actualizarModoPuntaje(partidaId, modos[0]);  // Establecemos el modo de puntaje para la partida
+      }
       } catch (error) {
         console.error("Error al cargar datos:", error);
       }
@@ -60,6 +71,22 @@ const VisualizarMesa = ({ tipo }) => {
 
     fetchData();
   }, [partidaId, jugadorId, tipoDesdeState]);
+
+  const handleModoPuntajeChange = async (nuevoModo) => {
+    setModoSeleccionado(nuevoModo);
+    console.log("cambiando", nuevoModo);
+    
+    // Almacena el modo seleccionado en el localStorage
+    localStorage.setItem("modoSeleccionado", JSON.stringify(nuevoModo));
+  
+    try {
+      await actualizarModoPuntaje(partidaId, nuevoModo); // Actualizamos el modo de puntaje en el backend
+    } catch (error) {
+      console.error("Error al actualizar el modo de puntaje:", error);
+    }
+  };
+  
+  
 
   const handleCartaSeleccionada = async (valor) => {
     if (jugadorActual.visualizacion !== "espectador") {
@@ -156,14 +183,16 @@ const VisualizarMesa = ({ tipo }) => {
         text={capitalizeFirstLetter(partida?.nombre)}
         jugador={jugadorActual?.nombre || "Usuario"}
       />
+      {/* aqui que se generen os cardJugador invitados */}
       <Circle>
         {esAdmin && (
             <ModoPuntaje
-              modoSeleccionado={modoSeleccionado}
-              setModoSeleccionado={setModoSeleccionado} 
-              esAdmin={esAdmin}
-              revelado={revelado}
-            />
+            modosPuntaje={modosPuntaje}
+            modoSeleccionado={modoSeleccionado}
+            setModoSeleccionado={handleModoPuntajeChange}  // Aquí pasamos la función para manejar el cambio
+            esAdmin={esAdmin}
+            revelado={revelado}
+          />
           )}
         {esAdmin && !revelado && (
           <button
@@ -183,9 +212,9 @@ const VisualizarMesa = ({ tipo }) => {
           </button>
         )}
       </Circle>
-      <div className="votacion__mesa">
+      <div className="votacion__mesa contenedor">
         {jugadores.map((jugador) => (
-          <div className={`votacion__jugador ${tipo}`} key={jugador.id}>
+          <div className="card__container" key={jugador.id}>
             <CardJugador
               tipo={jugador.rol}
               cartaSeleccionada={jugador.cartaSeleccionada}
@@ -194,15 +223,18 @@ const VisualizarMesa = ({ tipo }) => {
               revelado={revelado}
               visualizacion={jugador.visualizacion}
             />
-            {jugador.visualizacion !== "espectador" && jugador.id === jugadorActual?.id && !revelado && (
-              <CardVotacion
-                  onCartaSeleccionada={handleCartaSeleccionada}
-                  valoresCartas={modoSeleccionado.valores}
-                />
-            )}
           </div>
         ))}
       </div>
+      {jugadorActual?.visualizacion !== "espectador" &&
+        !revelado && (
+          <div className="votacion__acciones">
+            <CardVotacion
+              onCartaSeleccionada={handleCartaSeleccionada}
+              valoresCartas={modoSeleccionado ? modoSeleccionado.valores : []}
+            />
+          </div>
+        )}
       {revelado && (
         <ResultadosCartas
           conteoCartas={conteoCartas}

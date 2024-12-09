@@ -9,14 +9,31 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
+    flex-direction: row;
   }
+
+
   
-  .votacion__jugador {
+  /* .votacion__jugador {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px;
     color: #fff;
+  } */
+
+  .card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px;
+    color: #fff;
+  }
+
+  .votacion__acciones {
+   display: flex;
+   justify-content: start;
+  color: #fff;
   }
 
   .btn-revelar {

@@ -7,7 +7,7 @@ const InvitarJ = ({ text, value, onChange }) => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(value)
-      .then(() => alert('¡Link copiado!'))
+      .then(() => console.log('¡Link copiado!'))
       .catch(err => console.error('Error al copiar:', err));
   };
 

@@ -1,0 +1,39 @@
+@import url(../../../index.css);
+
+.puntaje{
+    display: flex;
+    color: var(--blanco);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    
+}
+
+.puntaje__h1{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.puntaje__option {
+    padding: 5px 25px;
+    font-size: 1rem;
+    color: var(--MoradoOscuro);
+    background-color: var(--blanco);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 400;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición para efectos al pasar el mouse */
+}
+  
+.puntaje__option:hover {
+    background-color: #e0e0e0; /* Fondo más oscuro al pasar el mouse */
+    color: #000; /* Cambio de color de texto */
+}
+  
+select:disabled {
+    cursor: not-allowed;
+    background-color: #e0e0e0; /* Fondo gris cuando está deshabilitado */
+    color: #999; /* Color gris cuando está deshabilitado */
+}
